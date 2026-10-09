@@ -8,25 +8,35 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/foodnow.styles.css" asp-append-version="true" />
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">foodnow</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+    	<nav class="navbar navbar-expand-xl sticky-top border-bottom py-3">
+            <div class="container-xl">
+                <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-4" href="#">
+                <span class="brand-mark"><i class="bi bi-basket2-fill"></i></span> FoodNOW
+                </a>
+                <div class="d-flex align-items-center gap-2 order-xl-3">
+                <button class="btn btn-dark rounded-pill d-none d-sm-inline-flex align-items-center gap-2 px-4" type="button"><i class="bi bi-person"></i> Sign in</button>
+                <button class="btn btn-light border rounded-circle position-relative p-0" style="width:44px;height:44px" type="button" id="cartButton" aria-label="Shopping bag">
+                    <i class="bi bi-bag fs-5"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary" id="cartCount">2</span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                </div>
+                <div class="collapse navbar-collapse order-xl-2" id="mainNav">
+                <div class="d-flex align-items-center gap-2 ms-xl-4 my-3 my-xl-0">
+                    <span class="bg-primary-subtle text-primary rounded-circle d-grid p-2"><i class="bi bi-geo-alt"></i></span>
+                    <div class="lh-sm"><small class="text-secondary text-uppercase fw-bold">Deliver to</small><div class="fw-bold">Brooklyn, NY <i class="bi bi-chevron-down small"></i></div></div>
+                </div>
+                <ul class="navbar-nav ms-xl-auto me-xl-4 fw-bold">
+                    <li class="nav-item"><a class="nav-link active text-primary" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#offers">Offers</a></li>
+                </ul>
+                <form class="d-flex bg-white border rounded-pill px-3 py-2 mb-2 mb-xl-0" role="search" id="navSearch">
+                    <i class="bi bi-search me-2"></i><input class="form-control form-control-sm border-0 shadow-none p-0" type="search" placeholder="Search restaurants or dishes" id="navSearchInput" />
+                </form>
                 </div>
             </div>
         </nav>
@@ -37,9 +47,15 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - foodnow - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="text-white mt-5">
+        <div class="container-xl py-5">
+            <div class="row g-5">
+                <div class="col-lg-5"><a class="navbar-brand text-white d-flex align-items-center gap-2 fw-bold fs-4" href="#"><span class="brand-mark"><i class="bi bi-basket2-fill"></i></span>FoodNOW</a><p class="text-white-50 mt-4">Good food from great local restaurants, delivered simply.</p><div class="d-flex gap-2"><a class="social-link btn btn-outline-light border-0 rounded-circle d-grid align-items-center" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a class="social-link btn btn-outline-light border-0 rounded-circle d-grid align-items-center" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a class="social-link btn btn-outline-light border-0 rounded-circle d-grid align-items-center" href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a></div></div>
+                <div class="col-6 col-lg"><h3 class="h6 fw-bold">Discover</h3><ul class="nav flex-column mt-3"><li><a class="nav-link px-0 text-white-50" href="#">Restaurants</a></li><li><a class="nav-link px-0 text-white-50" href="#">Offers</a></li><li><a class="nav-link px-0 text-white-50" href="#">Rewards</a></li></ul></div>
+                <div class="col-6 col-lg"><h3 class="h6 fw-bold">Support</h3><ul class="nav flex-column mt-3"><li><a class="nav-link px-0 text-white-50" href="#">Help center</a></li><li><a class="nav-link px-0 text-white-50" href="#">Contact us</a></li><li><a class="nav-link px-0 text-white-50" href="#">Partner with us</a></li></ul></div>
+                <div class="col-6 col-lg"><h3 class="h6 fw-bold">Company</h3><ul class="nav flex-column mt-3"><li><a class="nav-link px-0 text-white-50" href="#">About</a></li><li><a class="nav-link px-0 text-white-50" href="#">Terms</a></li><li><a class="nav-link px-0 text-white-50" href="#">Privacy</a></li></ul></div>
+            </div>
+            <div class="border-top border-secondary mt-5 pt-4 d-flex flex-column flex-sm-row justify-content-between small text-white-50"><span>© 2025 FoodNOW, Inc.</span><span>Made with care for people who love food.</span></div>
         </div>
     </footer>
 

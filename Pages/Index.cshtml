@@ -1,10 +1,87 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+	ViewData["Title"] = "FoodNow delivery";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+	<section class="container-xl pt-4 pt-md-5" id="home">
+		<div class="hero row g-0">
+			<div class="col-lg-6 d-flex align-items-center">
+			<div class="p-4 p-md-5 text-white">
+				<span class="badge rounded-pill bg-white bg-opacity-10 py-2 px-3 mb-4"><i class="bi bi-circle-fill text-warning small me-2"></i>Free delivery on selected restaurants</span>
+				<h1 class="fw-bold mb-4">Good food, right at your door.</h1>
+				<p class="lead text-white-50 mb-4">Discover neighborhood favorites and exciting new flavors, delivered fresh when you want them.</p>
+				<form class="search-shell d-flex align-items-center bg-white rounded-pill p-2 shadow-lg" id="heroSearch">
+				<i class="bi bi-search text-primary ms-2"></i>
+				<input class="form-control border-0 shadow-none" id="heroSearchInput" placeholder="What are you craving?" />
+				<button class="btn btn-primary rounded-pill px-4 text-nowrap fw-bold" type="submit">Find food</button>
+				</form>
+				<div class="d-flex flex-wrap gap-3 mt-4 small text-white-50"><span>30 min average delivery</span><span>•</span><span>300+ local restaurants</span></div>
+			</div>
+			</div>
+			<div class="col-lg-6 hero-image position-relative">
+			<div class="position-absolute bottom-0 end-0 m-4 bg-white rounded-4 shadow p-3">
+				<div class="d-flex align-items-center gap-3"><span class="bg-success-subtle text-success rounded-circle d-grid p-2"><i class="bi bi-check-lg"></i></span><div><small class="text-secondary">Your order</small><div class="fw-bold text-dark">Arrives in 24 min</div></div></div>
+			</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="container-xl section-space">
+		<div class="d-flex justify-content-between align-items-end mb-4">
+			<div><div class="eyebrow fw-bold text-primary text-uppercase mb-2">Explore</div><h2 class="fw-bold mb-0">What are you craving?</h2></div>
+			<a href="#restaurants" class="link-dark fw-bold text-decoration-none d-none d-sm-block">Browse all <i class="bi bi-arrow-right ms-2"></i></a>
+		</div>
+
+		<div class="row row-cols-2 row-cols-sm-4 row-cols-lg-8 g-3 flex-nowrap overflow-x-auto pb-3" id="categories">
+			<div class="col"><button class="category-card active btn bg-white border rounded-4 w-100 p-3" data-category="All"><span class="category-icon rounded-circle d-inline-grid align-items-center mb-2">🍽️</span><span class="d-block fw-bold">All</span></button></div>
+			<div class="col"><button class="category-card btn bg-white border rounded-4 w-100 p-3" data-category="Pizza"><span class="category-icon rounded-circle d-inline-grid align-items-center mb-2">🍕</span><span class="d-block fw-bold">Pizza</span></button></div>
+			<div class="col"><button class="category-card btn bg-white border rounded-4 w-100 p-3" data-category="Burgers"><span class="category-icon rounded-circle d-inline-grid align-items-center mb-2">🍔</span><span class="d-block fw-bold">Burgers</span></button></div>
+			<div class="col"><button class="category-card btn bg-white border rounded-4 w-100 p-3" data-category="Asian"><span class="category-icon rounded-circle d-inline-grid align-items-center mb-2">🥡</span><span class="d-block fw-bold">Asian</span></button></div>
+			<div class="col"><button class="category-card btn bg-white border rounded-4 w-100 p-3" data-category="Sushi"><span class="category-icon rounded-circle d-inline-grid align-items-center mb-2">🍣</span><span class="d-block fw-bold">Sushi</span></button></div>
+			<div class="col"><button class="category-card btn bg-white border rounded-4 w-100 p-3" data-category="Greek"><span class="category-icon rounded-circle d-inline-grid align-items-center mb-2">🫓</span><span class="d-block fw-bold">Greek</span></button></div>
+			<div class="col"><button class="category-card btn bg-white border rounded-4 w-100 p-3" data-category="Desserts"><span class="category-icon rounded-circle d-inline-grid align-items-center mb-2">🍰</span><span class="d-block fw-bold">Desserts</span></button></div>
+			<div class="col"><button class="category-card btn bg-white border rounded-4 w-100 p-3" data-category="Healthy"><span class="category-icon rounded-circle d-inline-grid align-items-center mb-2">🥗</span><span class="d-block fw-bold">Healthy</span></button></div>
+		</div>
+	</section>
+
+	<section class="container-xl pb-5" id="offers">
+	<div class="eyebrow fw-bold text-primary text-uppercase mb-2">Fresh offers</div>
+		<h2 class="fw-bold mb-4">More flavor, less spend</h2>
+		<div class="row g-4">
+			<div class="col-md-4"><div class="offer-card offer-coral text-white p-4 d-flex flex-column"><div><span class="badge rounded-pill bg-white bg-opacity-25 mb-4">NEW CUSTOMER</span><div class="offer-number">20%</div><h3 class="h4 fw-bold">Off your first order</h3><p class="text-white-50">Use code HELLO20 at checkout.</p></div><button class="btn btn-light text-primary rounded-pill fw-bold align-self-start mt-auto offer-action" data-message="Code HELLO20 copied">Claim offer <i class="bi bi-arrow-right ms-2"></i></button></div></div>
+			<div class="col-md-4"><div class="offer-card offer-green p-4 d-flex flex-column"><div><span class="badge rounded-pill text-bg-dark bg-opacity-10 text-dark mb-4">TODAY ONLY</span><div class="offer-number">$0</div><h3 class="h4 fw-bold">Delivery fees today</h3><p class="text-secondary">On orders over $25 from selected spots.</p></div><button class="btn btn-dark rounded-pill fw-bold align-self-start mt-auto offer-action" data-message="Free delivery restaurants selected">Explore now <i class="bi bi-arrow-right ms-2"></i></button></div></div>
+			<div class="col-md-4"><div class="offer-card offer-yellow p-4 d-flex flex-column"><div><span class="badge rounded-pill text-bg-dark bg-opacity-10 text-dark mb-4">THIS WEEKEND</span><div class="offer-number">2×</div><h3 class="h4 fw-bold">Points on every bite</h3><p class="text-secondary">Earn rewards faster, Friday through Sunday.</p></div><button class="btn btn-dark rounded-pill fw-bold align-self-start mt-auto offer-action" data-message="Rewards activated">Activate <i class="bi bi-arrow-right ms-2"></i></button></div></div>
+		</div>
+	</section>
+
+	<section class="bg-white border-top border-bottom section-space" id="restaurants">
+		<div class="container-xl">
+		<div class="eyebrow fw-bold text-primary text-uppercase mb-2">Near you</div><h2 class="fw-bold mb-4" id="restaurantTitle">Popular restaurants</h2>
+		<div class="row g-4" id="restaurantGrid">
+		<div class="col-sm-6 col-lg-3 restaurant-item" data-search="Ember & Crust Italian Pizza" data-category="Pizza"><article class="restaurant-card h-100"><div class="position-relative"><img class="restaurant-image w-100 rounded-4" src="https://images.unsplash.com/photo-1645087523667-52752c15ad25?auto=format&fit=crop&w=800&q=85" alt="Pizza at Ember and Crust" /><span class="badge bg-primary position-absolute top-0 start-0 m-3">20% OFF</span><button class="favorite btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow-sm" aria-label="Favorite"><i class="bi bi-heart"></i></button></div><div class="pt-3 px-1"><div class="d-flex justify-content-between"><div><h3 class="h5 fw-bold mb-1">Ember & Crust</h3><p class="text-secondary small">Italian • Pizza</p></div><span class="rating badge h-100"><i class="bi bi-star-fill me-1"></i>4.9</span></div><div class="d-flex gap-3 small text-secondary fw-semibold"><span><i class="bi bi-clock me-1"></i>20–30 min</span><span>$1.49 delivery</span></div></div></article></div>
+		<div class="col-sm-6 col-lg-3 restaurant-item" data-search="Stacked Social Burgers American" data-category="Burgers"><article class="restaurant-card h-100"><div class="position-relative"><img class="restaurant-image w-100 rounded-4" src="https://images.unsplash.com/photo-1603322617163-cc100d141345?auto=format&fit=crop&w=800&q=85" alt="Burger at Stacked Social" /><button class="favorite btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow-sm" aria-label="Favorite"><i class="bi bi-heart"></i></button></div><div class="pt-3 px-1"><div class="d-flex justify-content-between"><div><h3 class="h5 fw-bold mb-1">Stacked Social</h3><p class="text-secondary small">Burgers • American</p></div><span class="rating badge h-100"><i class="bi bi-star-fill me-1"></i>4.8</span></div><div class="d-flex gap-3 small text-secondary fw-semibold"><span><i class="bi bi-clock me-1"></i>25–35 min</span><span>$0.99 delivery</span></div></div></article></div>
+		<div class="col-sm-6 col-lg-3 restaurant-item" data-search="Little Ginger Asian Noodles" data-category="Asian"><article class="restaurant-card h-100"><div class="position-relative"><img class="restaurant-image w-100 rounded-4" src="https://images.unsplash.com/photo-1686554825530-0d93d133af41?auto=format&fit=crop&w=800&q=85" alt="Asian food at Little Ginger" /><span class="badge bg-primary position-absolute top-0 start-0 m-3">FREE DELIVERY</span><button class="favorite btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow-sm" aria-label="Favorite"><i class="bi bi-heart"></i></button></div><div class="pt-3 px-1"><div class="d-flex justify-content-between"><div><h3 class="h5 fw-bold mb-1">Little Ginger</h3><p class="text-secondary small">Asian • Noodles</p></div><span class="rating badge h-100"><i class="bi bi-star-fill me-1"></i>4.7</span></div><div class="d-flex gap-3 small text-secondary fw-semibold"><span><i class="bi bi-clock me-1"></i>30–40 min</span><span>Free delivery</span></div></div></article></div>
+		<div class="col-sm-6 col-lg-3 restaurant-item" data-search="Sunday Table Brunch Cafe Healthy" data-category="Healthy"><article class="restaurant-card h-100"><div class="position-relative"><img class="restaurant-image w-100 rounded-4" src="https://images.unsplash.com/photo-1576830673079-085fcb846459?auto=format&fit=crop&w=800&q=85" alt="Brunch at Sunday Table" /><button class="favorite btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow-sm" aria-label="Favorite"><i class="bi bi-heart"></i></button></div><div class="pt-3 px-1"><div class="d-flex justify-content-between"><div><h3 class="h5 fw-bold mb-1">Sunday Table</h3><p class="text-secondary small">Brunch • Cafe</p></div><span class="rating badge h-100"><i class="bi bi-star-fill me-1"></i>4.9</span></div><div class="d-flex gap-3 small text-secondary fw-semibold"><span><i class="bi bi-clock me-1"></i>15–25 min</span><span>$1.99 delivery</span></div></div></article></div>
+		</div>
+		<div class="alert alert-light border text-center rounded-4 py-5 d-none" id="emptyState"><h3 class="h5 fw-bold">No restaurants found</h3><p class="text-secondary mb-0">Try another search or category.</p></div>
+		</div>
+	</section>
+
+	<section class="container-xl section-space">
+	<div class="eyebrow fw-bold text-primary text-uppercase mb-2">Made for you</div><h2 class="fw-bold mb-4">Your next favorite dish</h2>
+	<div class="row g-4">
+		<div class="col-sm-6 col-lg-3"><article class="dish-card card h-100 border-0 rounded-4 overflow-hidden shadow-sm"><img src="https://images.unsplash.com/photo-1617474019991-689674c2d1ae?auto=format&fit=crop&w=800&q=85" class="dish-image card-img-top" alt="Truffle mushroom pasta" /><div class="card-body"><h3 class="h6 fw-bold">Truffle Mushroom Pasta</h3><p class="small text-secondary">Ember & Crust</p><div class="d-flex justify-content-between align-items-center"><strong>$18.50</strong><button class="btn btn-primary rounded-pill btn-sm px-3 add-cart" data-item="Truffle Mushroom Pasta"><i class="bi bi-plus-lg me-1"></i>Add</button></div></div></article></div>
+		<div class="col-sm-6 col-lg-3"><article class="dish-card card h-100 border-0 rounded-4 overflow-hidden shadow-sm"><img src="https://images.unsplash.com/photo-1778690103044-88ad0e274e32?auto=format&fit=crop&w=800&q=85" class="dish-image card-img-top" alt="Harvest chicken bowl" /><div class="card-body"><h3 class="h6 fw-bold">Harvest Chicken Bowl</h3><p class="small text-secondary">Greenhouse Kitchen</p><div class="d-flex justify-content-between align-items-center"><strong>$15.90</strong><button class="btn btn-primary rounded-pill btn-sm px-3 add-cart" data-item="Harvest Chicken Bowl"><i class="bi bi-plus-lg me-1"></i>Add</button></div></div></article></div>
+		<div class="col-sm-6 col-lg-3"><article class="dish-card card h-100 border-0 rounded-4 overflow-hidden shadow-sm"><img src="https://images.unsplash.com/photo-1667473775795-41f69ae72c44?auto=format&fit=crop&w=800&q=85" class="dish-image card-img-top" alt="Miso sesame noodles" /><div class="card-body"><h3 class="h6 fw-bold">Miso Sesame Noodles</h3><p class="small text-secondary">Little Ginger</p><div class="d-flex justify-content-between align-items-center"><strong>$16.20</strong><button class="btn btn-primary rounded-pill btn-sm px-3 add-cart" data-item="Miso Sesame Noodles"><i class="bi bi-plus-lg me-1"></i>Add</button></div></div></article></div>
+		<div class="col-sm-6 col-lg-3"><article class="dish-card card h-100 border-0 rounded-4 overflow-hidden shadow-sm"><img src="https://images.unsplash.com/photo-1599145407491-5ea97913179c?auto=format&fit=crop&w=800&q=85" class="dish-image card-img-top" alt="Tiramisu dessert" /><div class="card-body"><h3 class="h6 fw-bold">Tiramisu Cloud</h3><p class="small text-secondary">Dolce House</p><div class="d-flex justify-content-between align-items-center"><strong>$8.50</strong><button class="btn btn-primary rounded-pill btn-sm px-3 add-cart" data-item="Tiramisu Cloud"><i class="bi bi-plus-lg me-1"></i>Add</button></div></div></article></div>
+	</div>
+	</section>
+
+	<section class="container-xl pb-5">
+	<div class="rewards text-white text-center p-5"><div class="eyebrow fw-bold text-primary text-uppercase mb-2">FoodNOW rewards</div><h2 class="fw-bold">Good food should reward you.</h2><p class="text-white-50 mx-auto" style="max-width:600px">Join free, earn points on every order, and unlock member-only dishes and offers.</p><button class="btn btn-primary rounded-pill px-4 fw-bold offer-action" data-message="Welcome to FoodNOW Rewards">Join FoodNOW Rewards</button></div>
+	</section>
+
+	<div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+		<div id="liveToast" class="toast align-items-center text-bg-dark border-0 rounded-pill" role="status" aria-live="polite"><div class="d-flex"><div class="toast-body px-4 fw-bold" id="toastMessage">Added to your bag</div><button type="button" class="btn-close btn-close-white me-3 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div></div>
+	</div>
